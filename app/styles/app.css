@@ -1,0 +1,10 @@
+.question{
+  border-width: 2px;
+  border-style: solid;
+  border-color: #eee;
+  padding: 5px;
+  margin: 5px;
+  max-width: 45%;
+  min-width: 32.3%;
+  float: left;
+}

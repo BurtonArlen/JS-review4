@@ -1,0 +1,13 @@
+<h2>{{question.author}}</h2>
+<p>{{question.ask}}</p>
+{{#if isAnswerShow}}
+  <div class="answer">
+    <p>
+      {{question.answer}}
+    </p>
+  </div>
+  {{answer-question question=question answer="answer"}}
+  <button {{action 'answerHide'}}> Hide Answer </button>
+{{else}}
+  <button {{action 'answerShow'}}> Show Answer </button>
+{{/if}}
