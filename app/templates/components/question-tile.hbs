@@ -2,9 +2,11 @@
 <p>{{question.ask}}</p>
 {{#if isAnswerShow}}
   <div class="answer">
-    <p>
-      {{question.answer}}
-    </p>
+    {{#each question.answer as |answer|}}
+      <li>
+      {{answer.answer}}
+    </li>
+    {{/each}}
   </div>
   {{answer-question question=question answer="answer"}}
   <button {{action 'answerHide'}}> Hide Answer </button>

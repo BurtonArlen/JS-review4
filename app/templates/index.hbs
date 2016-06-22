@@ -4,11 +4,11 @@
     <h1>SUPER QnA</h1>
   </div>
   {{new-question save2="save3"}}
-  {{#each model as |question|}}
-  <div class="question">
-    {{question-tile answer="answer" question=question}}
-  </div>
-  {{/each}}
+    {{#each model as |question|}}
+      <div class="question">
+        {{question-tile answer="answer" question=question}}
+      </div>
+    {{/each}}
   {{#link-to 'about'}}About{{/link-to}}
   {{#link-to 'info'}}Contact Info{{/link-to}}
 </div>
