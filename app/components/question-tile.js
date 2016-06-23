@@ -1,13 +1,16 @@
 import Ember from 'ember';
-var trebec = "What is, ";
 
 export default Ember.Component.extend({
-
+  favorite: Ember.inject.service(),
   isAnswerShow: false,
   trebecSays: Ember.computed('question.author','question.ask',function(){
       return this.get('question.author')+" asks, "+this.get('question.ask');
   }),
   actions: {
+    favorite(question) {
+      console.log("log1: ",question.ask);
+      this.get('favorite').favorite(question);
+    },
     answerShow: function(){
       this.set('isAnswerShow', true);
     },

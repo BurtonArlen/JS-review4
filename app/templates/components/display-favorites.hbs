@@ -1,0 +1,10 @@
+  {{#each favorite.questions as |question|}}
+  <div class="questionFav">
+    <h3>{{question.author}} asks {{question.ask}}</h3>
+    {{#each question.answer as |answer|}}
+      <li>
+      <em>{{answer.answer}}</em>
+    </li>
+    {{/each}}
+  </div>
+  {{/each}}

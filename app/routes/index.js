@@ -5,6 +5,7 @@ export default Ember.Route.extend({
     return this.store.findAll('question');
   },
   updateQuestionForm: false,
+  favorite: Ember.inject.service(),
   actions: {
     save3(params){
       var newQuestion = this.store.createRecord('question', params);
