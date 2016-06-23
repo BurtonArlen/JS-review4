@@ -1,4 +1,3 @@
-
 {{#if answerQuestion}}
   <div>
     <form>
@@ -10,5 +9,5 @@
     </form>
   </div>
 {{else}}
-    <button {{action 'answerQuestion'}}>Awnser this question</button>
+    <button {{action 'answerQuestion'}}>{{question-popularity question}}Awnser this question{{question-popularity question}}</button>
 {{/if}}

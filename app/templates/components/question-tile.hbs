@@ -1,20 +1,6 @@
 <h2>{{question.author}}</h2>
 <p>{{question.ask}}</p>
-{{#if updateQuestionForm}}
-  <h4>Update {{rental.owner}}'s {{rental.type}}</h4>
-    <div>
-      <form>
-        <div class="form-group">
-          <label for="ask">Question Update</label>
-          {{input value=ask id="ask" placeholder=question.ask}}
-        </div>
 
-        <button {{action 'update' question}}>Save</button>
-      </form>
-    </div>
-{{else}}
-    <button {{action 'updateQuestionForm'}}>Update</button>
-{{/if}}
 {{#if isAnswerShow}}
   <div class="answer">
     {{#each question.answer as |answer|}}
@@ -26,5 +12,7 @@
   {{answer-question question=question answer="answer"}}
   <button {{action 'answerHide'}}> Hide Answer </button>
 {{else}}
-  <button {{action 'answerShow'}}> Show Answer </button>
+  <button {{action 'answerShow'}}>{{question-popularity question}}
+
+ Show Answer {{question-popularity question}}</button>
 {{/if}}
