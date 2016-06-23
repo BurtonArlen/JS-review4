@@ -1,8 +1,12 @@
 import Ember from 'ember';
+var trebec = "What is, ";
 
 export default Ember.Component.extend({
+
   isAnswerShow: false,
-  updateQuestionForm: false,
+  trebecSays: Ember.computed('question.author','question.ask',function(){
+      return this.get('question.author')+" asks, "+this.get('question.ask');
+  }),
   actions: {
     answerShow: function(){
       this.set('isAnswerShow', true);
@@ -19,7 +23,7 @@ export default Ember.Component.extend({
       Object.keys(params).forEach(function(key) {
         if(params[key]!==undefined) {
           question.set(key,params[key]);
-        }s
+        }
       });
       question.save();
       this.transitionTo('index');
