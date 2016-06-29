@@ -7,22 +7,7 @@
   {{new-question save2="save3"}}
     {{#each model as |question|}}
       <div class="question">
-        {{question-tile answer="answer" question=question}}
-      {{#if updateQuestionForm}}
-        <h4>Update</h4>
-          <div>
-            <form>
-              <div class="form-group">
-                <label for="ask">Question Update</label>
-                {{input value=ask id="ask" placeholder=question.ask}}
-              </div>
-
-              <button {{action 'update' question}}>Save</button>
-            </form>
-          </div>
-      {{else}}
-          <button {{action 'updateQuestionForm'}}>Update</button>
-      {{/if}}
+        {{question-tile answer="answer" update="update" question=question}}
     </div>
     {{/each}}
 </div>

@@ -11,6 +11,7 @@
   {{answer-question question=question answer="answer"}}
   <button {{action 'answerHide'}}> Hide Answer </button>
 {{else}}
+  {{update-question question=question update="update"}}
   <button {{action 'answerShow'}}>{{question-popularity question}}Show Answer {{question-popularity question}}</button>
   <button {{action 'favorite' question}}>Add {{question.author}}'s question to Favorites</button>
 

@@ -20,9 +20,6 @@ export default Ember.Route.extend({
       });
       this.transitionTo('index');
     },
-    updateQuestionForm: function(){
-      this.set('updateQuestionForm', true);
-    },
     update(question, params){
       console.log("question ",question.ask);
       console.log("params ", params);
@@ -35,5 +32,6 @@ export default Ember.Route.extend({
       this.transitionTo('index');
       this.set('updateQuestionForm',false);
     },
+
   }
 });
